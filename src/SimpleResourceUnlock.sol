@@ -11,7 +11,7 @@ contract SimpleResourceUnlock {
     error InsufficientFunds();
 
     function setResource(string memory key, string memory value, uint256 cost) public {
-        if(resourceOwners[key] != address(0) && resourceOwners[key] != msg.sender) {
+        if (resourceOwners[key] != address(0) && resourceOwners[key] != msg.sender) {
             revert Unauthorized();
         }
         _resourceVals[key] = value;
@@ -34,5 +34,4 @@ contract SimpleResourceUnlock {
         }
         return _resourceVals[key];
     }
-
 }

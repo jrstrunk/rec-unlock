@@ -11,10 +11,11 @@ contract CounterTest is Test {
         recUnlock = new SimpleResourceUnlock();
     }
 
-    function test_SetResource() public {
+    function test_GetResourceCost() public {
         uint256 cost = 1;
         string memory key = "testKey";
         recUnlock.setResource(key, "test", cost);
         assertEq(recUnlock.getCost(key), cost);
     }
+
 }
